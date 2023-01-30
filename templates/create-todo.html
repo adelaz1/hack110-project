@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Restaurant!</title>
+        <link rel='stylesheet' href='/static/bootstrap.min.css'>
+        <link rel='stylesheet' href='/static/styles.css' />
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- navigation bar -->
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/"><img class="logo" src="/static/logo.png" alt="logo"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/create-todo">create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view-todo-list">view</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <form method="post">
+            <label for="title">restaurant name:</label>
+            <br />
+            <input type="text" id="title" name="title">
+            <br />
+            <br />
+            <label for="category">category:</label>
+            <input list="category" name="category">
+            <datalist id="category">
+                <option value="american">
+                <option value="asian">
+                <option value="italian">
+                <option value="mediterranean">
+                <option value="spanish">
+                <option value="other">
+            </datalist>
+            <br />
+            <br />
+            <label for="fave">favorite dish:</label>
+            <br />
+            <input type="text" id="fave" name="fave">
+            <br />
+            <br />
+            <label for="description">notes:</label>
+            <br />
+            <input type="text" id="description" name="description">
+            <br />
+            <br />
+            <label for="color">rating:</label>
+            <input type="range" id="color" name="color" min="0" max="10">
+            <br />
+            <br />
+            <input type="submit" value="create entry">
+        </form>
+    </div>       
+    </body>
+</html>

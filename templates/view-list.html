@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>View List!</title>
+        <link rel='stylesheet' href='/static/bootstrap.min.css' />
+        <link rel='stylesheet' href='/static/styles.css' />
+    </head>
+    <body>
+        <!-- navigation bar -->
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/"><img class="logo" src="/static/logo.png" alt="logo"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/create-todo">create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view-todo-list">view</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>restaurant list</h2>
+        {% for i in range(todo_list| length) %} {% set todo = todo_list[i] %}
+      <div
+        class="todo {{ 'checked' if todo.checked else ''}}"
+      >
+      <div>
+        <form action="/view-todo-list" method="POST">
+          <button
+            class="btn btn-secondary ml-3"
+            type="submit"
+            style="float: right"
+            value="{{i}}"
+            name="check-button"
+            id="check-button"
+          >
+            {{'unfavorite' if todo.checked else 'favorite'}}
+            <span class="bi bi-heart"></span>
+          </button>
+        </form>
+        <form action="/edit-todo{{i}}" method="GET">
+            <button class="btn btn-info" type="submit" style="float: right" value="{{i}}" name="edit-button" id="edit-button" todo-id="{{i}}">
+                edit
+            </button>
+        </form>
+        </div>
+        <h4>{{todo.title}}</h4>
+        <p>{{todo.category}}</p>
+        <p>fave dish: {{todo.fave}}</p>
+        <p>{{todo.description}}</p>
+        <p>{{todo.color}}/10</p>
+      </div>
+      {% endfor %}
+    </div>
+    </body>
+</html>

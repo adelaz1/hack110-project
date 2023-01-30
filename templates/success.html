@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Restaurant Tracker</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel='stylesheet' href='static/styles.css' />
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/"><img class="logo" src="/static/logo.png" alt="logo"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/create-todo">create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view-todo-list">view</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class='container'>
+
+        <p>successfully added your restaurant!</p>
+        <p> name: {{title}}</p>
+        <p> category: {{category}}</p>
+        <p> fave dish: {{fave}}</p>
+        <p> notes: {{description}}</p>
+        <p> rating: {{color}}</p>
+        <form method="get">
+            <input type="submit" value="create another!">
+        </form>
+        <a href="/view-todo-list">view list</a>
+
+    </div>
+</body>
+
+</htmll>
